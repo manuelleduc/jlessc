@@ -1,0 +1,234 @@
+//
+// Flamingo main LESS file
+// --------------------------------------------------
+
+// Imports ====================================================================
+@import "before-bootstrap"; // Fixes that must be included BEFORE bootstrap
+@import "bootstrap/bootstrap.less"; // Bootstrap
+@import "variables"; // Bootstrap variables overrided by flamingo
+@import "accordion";
+@import "action-menus";
+@import "admin";
+@import "annotations";
+@import "buttons";
+@import "breadcrumbs";
+@import "drawer";
+@import "edit";
+@import "figure";
+@import "forms";
+@import "general";
+@import "grid";
+@import "headers";
+@import "layout";
+@import "livetable";
+@import "messages";
+@import "modals";
+@import "misc";
+@import "panels";
+@import "tables";
+@import "tree";
+@import "type";
+@import "users";
+@import "vertical-menus";
+@import "xlist";
+// In order to let custom skins easily override styling, we import a custom.less that is empty by default.
+// Make sure the custom.less import is the last one in the imports list.
+@import "custom"; 
+
+// Velocity Content =============================================================
+//
+// As the main LESS file for this skin, we can use Velocity.
+// ------------------------------------------------------------------------------
+
+// Here we initialize some variables that can be used in other LESS files
+
+            
+
+        // Colors from the new flamingo theme class
+                    // Default
+  @xwiki-border-color:                  #E8E8E8;
+  @xwiki-panel-header-bg:               #ECECEC;
+  @xwiki-panel-header-text:             #4D5860;
+  @xwiki-page-content-bg:               #FFFFFF;
+  @xwiki-background-secondary-color:    #F3F3F3;
+  @xwiki-page-header-bg-color:          #FFFFFF;
+  @xwiki-page-header-bg-image:          ;
+  @xwiki-page-header-bg-position:       ;
+                                                @body-bg: #fafafa;
+                                                    @font-family-base: Open Sans, sans-serif;
+                                          @link-color: #3173b5;
+                                                    @brand-success: #56b881;
+                                          @brand-info: #3bb2d0;
+                                                                        @component-active-color: @list-group-link-hover-color;
+                                          @component-active-bg: @list-group-hover-bg;
+                                                                                  @btn-font-weight: normal;
+                                          @btn-default-color: #4d5860;
+                                          @btn-default-bg: #f8f8f8;
+                                          @btn-primary-color: #fff;
+                                          @btn-primary-bg: #3E7CBC;
+                                                                                                                                    @navbar-default-color: #fff;
+                                          @navbar-default-bg: #3E7CBC;
+                                          @navbar-default-link-color: #fff;
+                                          @navbar-default-link-hover-color: #fff;
+                                          @navbar-default-link-hover-bg: #2f6ead;
+                                          @navbar-default-link-active-color: #fff;
+                                                                                            @dropdown-link-hover-color: #333;
+                                          @dropdown-link-hover-bg: #f5f5f5;
+                                                                                                                          @panel-bg: #fafafa;
+                                                    @breadcrumb-bg: #f8f8f8;
+                                                                        
+
+
+
+
+@icon-font-path:                      "/xwiki/webjars/wiki%3Axwiki/bootstrap/3.4.1/fonts/";
+
+@xwiki-accordion-title-bar-background:"/xwiki/resources/icons/xwiki/accordion.png?cache-version=1630656356000";
+
+@xwiki-silk-icon-folder:              "/xwiki/resources/icons/silk/folder.png?cache-version=1630656356000";
+@xwiki-silk-icon-page-white-text:     "/xwiki/resources/icons/silk/page_white_text.png?cache-version=1630656356000";
+@xwiki-silk-icon-comment:             "/xwiki/resources/icons/silk/comment.png?cache-version=1630656356000";
+@xwiki-silk-icon-attachment:          "/xwiki/resources/icons/silk/attach.png?cache-version=1630656356000";
+@xwiki-silk-icon-bullet-add:          "/xwiki/resources/icons/silk/bullet_add.png?cache-version=1630656356000";
+@xwiki-silk-icon-chart-organization:  "/xwiki/resources/icons/silk/chart_organisation.png?cache-version=1630656356000";
+
+@xwiki-icon-parent-edit:              "/xwiki/resources/icons/xwiki/parent_edit.gif?cache-version=1630656356000";
+@xwiki-icon-edit-section:             "\f040";
+@xwiki-icon-spinner:                  "/xwiki/resources/icons/xwiki/spinner.gif?cache-version=1630656356000";
+@xwiki-icon-spinner-height:           16px;
+@xwiki-icon-link-external:            "/xwiki/resources/icons/xwiki/external-link.png?cache-version=1630656356000";
+
+// Now we can inject the content of the 'lessCode' field of the flamingo theme
+  /* Administration: Vertical Menus */
+@list-group-active-border: @list-group-border;
+
+/* Drawer */
+@xwiki-drawer-menu-item-hover-bg: @list-group-hover-bg;
+@xwiki-drawer-menu-item-hover-color: @list-group-link-hover-color;
+
+/* Other */
+@well-bg: @body-bg;
+
+
+
+
+// We re-inject the variables from the flamingo theme so they can interract with the content of @lessCode.
+// This way, it's also consistent with the Flamingo Theme preview (See: https://jira.xwiki.org/browse/XWIKI-12672)
+    // Colors from the new flamingo theme class
+                                                  @body-bg: #fafafa;
+                                                    @font-family-base: Open Sans, sans-serif;
+                                          @link-color: #3173b5;
+                                                    @brand-success: #56b881;
+                                          @brand-info: #3bb2d0;
+                                                                        @component-active-color: @list-group-link-hover-color;
+                                          @component-active-bg: @list-group-hover-bg;
+                                                                                  @btn-font-weight: normal;
+                                          @btn-default-color: #4d5860;
+                                          @btn-default-bg: #f8f8f8;
+                                          @btn-primary-color: #fff;
+                                          @btn-primary-bg: #3E7CBC;
+                                                                                                                                    @navbar-default-color: #fff;
+                                          @navbar-default-bg: #3E7CBC;
+                                          @navbar-default-link-color: #fff;
+                                          @navbar-default-link-hover-color: #fff;
+                                          @navbar-default-link-hover-bg: #2f6ead;
+                                          @navbar-default-link-active-color: #fff;
+                                                                                            @dropdown-link-hover-color: #333;
+                                          @dropdown-link-hover-bg: #f5f5f5;
+                                                                                                                          @panel-bg: #fafafa;
+                                                    @breadcrumb-bg: #f8f8f8;
+                                                                      
+// ==============================================================================
+// NOT SENT TO THE BROWSER FROM THIS POINT
+// ==============================================================================
+.not-sent-to-the-browser-from-this-point{
+  color: red;
+}
+    .colortheme-pageContentBackgroundColor{
+        color: @xwiki-page-content-bg;
+    }
+    .colortheme-borderColor{
+        color: @xwiki-border-color;
+    }
+    .colortheme-panelHeaderBackgroundColor{
+        color: @panel-default-heading-bg;
+    }
+    .colortheme-textColor{
+        color: @text-color;
+    }
+    .colortheme-textPrimaryColor{
+        color: @text-muted;
+    }
+    .colortheme-textSecondaryColor{
+        color: @text-muted;
+    }
+    .colortheme-linkColor{
+        color: @link-color;
+    }
+    .colortheme-titleColor{
+        color: @headings-color;
+    }
+    .colortheme-pageBackgroundColor{
+        color: @body-bg;
+    }
+    .colortheme-backgroundSecondaryColor{
+        color: @well-bg;
+    }
+    .colortheme-menuBackgroundColor{
+        color: @navbar-default-bg;
+    }
+    .colortheme-menuLinkColor{
+        color: @navbar-default-link-color;
+    }
+    .colortheme-menuSelectedEntryBackgroundColor{
+        color: @navbar-default-link-active-bg;
+    }
+    .colortheme-menuSelectedEntryLinkColor{
+        color: @navbar-default-link-active-color;
+    }
+    .colortheme-panelBackgroundColor{
+        color: @panel-bg;
+    }
+    .colortheme-panelTextColor{
+        color: @panel-default-text;
+    }
+    .colortheme-panelHeaderTextColor{
+        color: @xwiki-panel-header-text;
+    }
+    .colortheme-panelHeaderBackgroundColor{
+        color: @xwiki-panel-header-bg;
+    }
+    .colortheme-buttonPrimaryTextColor{
+        color: @btn-primary-color;
+    }
+    .colortheme-buttonPrimaryBackgroundColor{
+        color: @btn-primary-bg;
+    }
+    .colortheme-buttonSecondaryTextColor{
+        color: @btn-default-color;
+    }
+    .colortheme-buttonSecondaryBackgroundColor{
+        color: @btn-default-bg;
+    }
+    .colortheme-menuAddEntryLinkColor{
+        color: @btn-success-color;
+    }
+    .colortheme-menuAddEntryBackgroundColor{
+        color: @btn-success-bg;
+    }
+    .colortheme-highlightColor{
+        color: @nav-link-hover-bg;
+    }
+    .colortheme-notificationSuccessColor{
+        color: @brand-success;
+    }
+    .colortheme-notificationInfoColor{
+        color: @brand-info;
+    }
+    .colortheme-notificationWarningColor{
+        color: @brand-warning;
+    }
+    .colortheme-notificationErrorColor{
+        color: @brand-danger;
+    }
+

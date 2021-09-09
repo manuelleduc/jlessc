@@ -2,3 +2,4 @@
 /build/
 /.gradle/
 /node_modules/
+/.idea/
